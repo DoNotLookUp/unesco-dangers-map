@@ -1,0 +1,14 @@
+{
+"type": "FeatureCollection",
+"name": "baikal_danger_hppall",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "id": 1, "maptext": "Иркутская ГЭС", "maptext_en": "Irkutsk HPP" }, "geometry": { "type": "Point", "coordinates": [ 104.328169613722153, 52.242156797018403 ] } },
+{ "type": "Feature", "properties": { "id": 2, "maptext": "Братская ГЭС", "maptext_en": "Bratsk HPP" }, "geometry": { "type": "Point", "coordinates": [ 101.784587156612019, 56.286220296865309 ] } },
+{ "type": "Feature", "properties": { "id": 3, "maptext": "Усть-Илимская ГЭС", "maptext_en": "Ust-Ilimsk HPP" }, "geometry": { "type": "Point", "coordinates": [ 102.69419132497795, 57.968424887882264 ] } },
+{ "type": "Feature", "properties": { "id": 4, "maptext": "Богучанская ГЭС", "maptext_en": "Boguchany HPP" }, "geometry": { "type": "Point", "coordinates": [ 99.154621312853308, 58.702175807199879 ] } },
+{ "type": "Feature", "properties": { "id": 1, "maptext": "ГЭС «Шурэн»", "maptext_en": "Shuren HHP" }, "geometry": { "type": "Point", "coordinates": [ 104.39767206572111, 49.539976733936008 ] } },
+{ "type": "Feature", "properties": { "id": 2, "maptext": "ГЭС «Эгийн-Гол»", "maptext_en": "Egiin Gol HHP" }, "geometry": { "type": "Point", "coordinates": [ 103.261799736837631, 49.553330566813827 ] } },
+{ "type": "Feature", "properties": { "id": 3, "maptext": "Гидроузел на р.Орхон", "maptext_en": "Orkhon Gobi Project" }, "geometry": { "type": "Point", "coordinates": [ 103.286317346559898, 48.552602394055597 ] } }
+]
+}
