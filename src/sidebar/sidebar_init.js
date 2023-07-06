@@ -1,4 +1,4 @@
-import {donation_data, ui_lang} from '../utils/lang.js';
+import {ui_lang} from '../utils/lang.js';
 import {is_mobile_browser} from '../utils/tech.js';
 
 export class Sidebar {
@@ -40,11 +40,6 @@ export class Sidebar {
 				danger_body.setAttribute('class', 'danger_text');
 				danger_body.innerHTML = d[`danger_html_${this.lang}`];
 			
-			/*
-			let danger_donation = document.createElement('div');
-				danger_donation.setAttribute('class', 'sidebar_footer');
-				danger_donation.innerHTML = `<a href="${donation_data[this.lang].url}" target="_blank"><div class="btn btn-support">${donation_data[this.lang].text}</div></a>`;
-			*/
 			slide.appendChild(danger_header);
 			slide.appendChild(danger_img_block);
 			slide.appendChild(danger_body);
