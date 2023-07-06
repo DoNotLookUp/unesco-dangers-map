@@ -39,8 +39,6 @@ export class UnescoMap {
 			attribution: 'Tiles &copy; Esri'
 		});
 
-		$('.spinner_wrapper').show();
-
 		if (!this.sid) {
 			fetch(`${apiURL}/`, {
 				method: "GET",

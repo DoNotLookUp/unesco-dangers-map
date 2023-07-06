@@ -250,7 +250,7 @@ html, body {
 	width: 100%;
 	z-index: 2000;
 	background-color: rgba(255, 255, 255, 0.9);
-	display: none;
+	display: block;
 }
 .spinner {
 	left: 50%;
