@@ -349,7 +349,7 @@ export class UnescoMap {
 				input_date_range_before = $('#compare-before').val();
 				input_date_range_after = $('#compare-after').val();
 			}
-			compareImagery(map, true_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage);
+			compareImagery(map, true_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage, this.sid);
 			$('.btn-tc').removeClass('btn-outline-success').addClass('btn-success');
 			$('.btn-fc').removeClass('btn-success').addClass('btn-outline-success');
 		});
@@ -361,7 +361,7 @@ export class UnescoMap {
 				input_date_range_before = $('#compare-before').val();
 				input_date_range_after = $('#compare-after').val();
 			}
-			compareImagery(map, false_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage);
+			compareImagery(map, false_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage, this.sid);
 			$('.btn-fc').removeClass('btn-outline-success').addClass('btn-success');
 			$('.btn-tc').removeClass('btn-success').addClass('btn-outline-success');
 		});
@@ -508,10 +508,10 @@ function addDefaultBasemaps(map) {
 	}).addTo(map);
 }
 
-function compareImagery(map, _type, time_before, time_after, cloud_coverage) {
+function compareImagery(map, _type, time_before, time_after, cloud_coverage, sid) {
 	try { window.slider.removeSlider(); } catch {}
 	
-	window.slider = new compareSlider(map, _type, this.sid);
+	window.slider = new compareSlider(map, _type, sid);
 	window.slider.setParams(time_before, time_after, cloud_coverage);
 	window.slider.showSlider();
 }
