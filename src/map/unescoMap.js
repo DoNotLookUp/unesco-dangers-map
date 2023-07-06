@@ -41,7 +41,10 @@ export class UnescoMap {
 
 
 		if (!this.sid) {
-			fetch(`${apiURL}/`)
+			fetch(`${apiURL}/`, {
+				method: "GET",
+				credentials: "include"
+			})
 			.then(r => r.text())
 			.then(data => {
 				this.sid = data;
@@ -369,7 +372,10 @@ export class UnescoMap {
 
 	async getGeoJsonData(year, month, bbox, callback) {
 		if (!this.shToken) {
-			let res = await fetch(`${apiURL}/gettoken`)
+			let res = await fetch(`${apiURL}/gettoken`, {
+				method: "GET",
+				credentials: "include"
+			})
 			let out = await res.json();
 			if (out.success) {
 				this.shToken = true;
@@ -383,7 +389,8 @@ export class UnescoMap {
 		let datesRes = await fetch(`${apiURL}/getdates`, {
 			method: 'POST',
 			body: JSON.stringify(bodyData),
-			headers: { "Content-Type": "application/json" }
+			headers: { "Content-Type": "application/json" },
+			credentials: "include"
 		})
 		let data = await datesRes.json();
 		callback(data);
