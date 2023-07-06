@@ -188,6 +188,7 @@ export class UnescoMap {
 		let esri_sat = this.esri_sat;
 		let s2_latest_mosaic = this.s2_latest_mosaic;
 		let s2_latest_mosaic_false = this.s2_latest_mosaic_false;
+		let sid = this.sid;
 
 		// on toggle change (on/off)
 		$(document).on('lcs-statuschange', '.lcs_check', function() {
@@ -352,7 +353,7 @@ export class UnescoMap {
 				input_date_range_before = $('#compare-before').val();
 				input_date_range_after = $('#compare-after').val();
 			}
-			compareImagery(map, true_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage, this.sid);
+			compareImagery(map, true_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage, sid);
 			$('.btn-tc').removeClass('btn-outline-success').addClass('btn-success');
 			$('.btn-fc').removeClass('btn-success').addClass('btn-outline-success');
 		});
@@ -364,7 +365,7 @@ export class UnescoMap {
 				input_date_range_before = $('#compare-before').val();
 				input_date_range_after = $('#compare-after').val();
 			}
-			compareImagery(map, false_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage, this.sid);
+			compareImagery(map, false_color_id + (show_date ? ',DATE' : ''), input_date_range_before, input_date_range_after, window.props.cloud_coverage, sid);
 			$('.btn-fc').removeClass('btn-outline-success').addClass('btn-success');
 			$('.btn-tc').removeClass('btn-success').addClass('btn-outline-success');
 		});
