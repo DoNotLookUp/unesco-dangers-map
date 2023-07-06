@@ -246,8 +246,8 @@ html, body {
 	position: absolute;
 	height: 100%;
 	width: 100%;
-	z-index: 1051;
-	background-color: rgba(255, 255, 255, 0.7);
+	z-index: 2000;
+	background-color: rgba(255, 255, 255, 0.9);
 	display: none;
 }
 .spinner {
@@ -259,7 +259,7 @@ html, body {
 .spinner > div {
 	width: 18px;
 	height: 18px;
-	background-color: rgb(33, 150, 243);
+	background-color: #66cc00;
 	border-radius: 100%;
 	display: inline-block;
 	-webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;

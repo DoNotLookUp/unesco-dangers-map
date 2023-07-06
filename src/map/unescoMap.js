@@ -39,6 +39,7 @@ export class UnescoMap {
 			attribution: 'Tiles &copy; Esri'
 		});
 
+		$('.spinner_wrapper').show();
 
 		if (!this.sid) {
 			fetch(`${apiURL}/`, {
@@ -48,6 +49,8 @@ export class UnescoMap {
 			.then(r => r.text())
 			.then(data => {
 				this.sid = data;
+
+				$('.spinner_wrapper').hide();
 				
 				this.s2_latest_mosaic = L.tileLayer.wms(`${wmsProxy}?sid=${this.sid}`, {
 					layers: true_color_id,
