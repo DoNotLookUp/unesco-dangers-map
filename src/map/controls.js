@@ -1,6 +1,6 @@
-import {geojson_data} from '../utils/lang.js?v=0.84';
-import {borders_style, territories_style, danger_style, danger_unknown_style, wildlife_style} from '../utils/data.js?v=0.84';
-import {Sidebar} from '../sidebar/sidebar_init.js?v=0.84';
+import {geojson_data} from '../utils/lang.js';
+import {borders_style, territories_style, danger_style, danger_unknown_style, wildlife_style} from '../utils/data.js';
+import {Sidebar} from '../sidebar/sidebar_init.js';
 import {getCentroid2, getLineCenter, is_mobile_browser, dateline, checkURLExists} from '../utils/tech.js';
 
 let _sidebar;

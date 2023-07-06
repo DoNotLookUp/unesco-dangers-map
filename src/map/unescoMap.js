@@ -1,5 +1,5 @@
 import {compareSlider} from './compareSlider.js';
-import {loadLocalData, defaultToggles, toggleSidebar, toggleSettings, toggleComparingWindow} from './controls.js?v=0.86';
+import {loadLocalData, defaultToggles, toggleSidebar, toggleSettings, toggleComparingWindow} from './controls.js';
 import {true_color_id, false_color_id, territories_style, apiURL, wmsProxy} from '../utils/data.js';
 import {is_mobile_browser} from '../utils/tech.js';
 
