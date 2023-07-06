@@ -43,7 +43,7 @@ export class UnescoMap {
 		if (!this.sid) {
 			fetch(`${apiURL}/`, {
 				method: "GET",
-				credentials: "same-origin"
+				credentials: "include"
 			})
 			.then(r => r.text())
 			.then(data => {
@@ -374,7 +374,7 @@ export class UnescoMap {
 		if (!this.shToken) {
 			let res = await fetch(`${apiURL}/gettoken`, {
 				method: "GET",
-				credentials: "same-origin"
+				credentials: "include"
 			})
 			let out = await res.json();
 			if (out.success) {
@@ -390,7 +390,7 @@ export class UnescoMap {
 			method: 'POST',
 			body: JSON.stringify(bodyData),
 			headers: { "Content-Type": "application/json" },
-			credentials: "same-origin"
+			credentials: "include"
 		})
 		let data = await datesRes.json();
 		callback(data);
