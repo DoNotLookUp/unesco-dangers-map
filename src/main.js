@@ -9,8 +9,6 @@ let map = new UnescoMap();
 //lang check
 langCheck(function(lang) {
 	map.setLanguage(lang);
-	map.initControlElements();
-	map.initBtnControls();
 });
 
 // togglable switch

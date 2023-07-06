@@ -1,5 +1,5 @@
 import {compareSlider} from './compareSlider.js';
-import {loadLocalData, defaultToggles, toggleSidebar, toggleSettings, toggleComparingWindow} from './controls.js';
+import {loadLocalData, defaultToggles, toggleSidebar, toggleSettings, toggleComparingWindow} from './controls.js?v=0.86';
 import {true_color_id, false_color_id, territories_style, apiURL, wmsProxy} from '../utils/data.js';
 import {is_mobile_browser} from '../utils/tech.js';
 
@@ -39,20 +39,32 @@ export class UnescoMap {
 			attribution: 'Tiles &copy; Esri'
 		});
 
-		this.s2_latest_mosaic = L.tileLayer.wms(wmsProxy, {
-			layers: true_color_id,
-			format: "image/png",
-			transparent: 1,
-			attribution: '&copy; <a href="https://sentinel-hub.com/">Sentinel-Hub</a> &copy; <a href="https://www.copernicus.eu/en">Copernicus</a>'
-		});
 
-		this.s2_latest_mosaic_false = L.tileLayer.wms(wmsProxy, {
-			layers: false_color_id,
-			WARNINGS: 'YES', // in-image warnings, like "No data available for the specified area"
-			format: "image/png",
-			transparent: 1,
-			attribution: '&copy; <a href="https://sentinel-hub.com/">Sentinel-Hub</a> &copy; <a href="https://www.copernicus.eu/en">Copernicus</a>'
-		});
+		if (!this.sid) {
+			fetch(`${apiURL}/`)
+			.then(r => r.text())
+			.then(data => {
+				this.sid = data;
+				
+				this.s2_latest_mosaic = L.tileLayer.wms(`${wmsProxy}?sid=${this.sid}`, {
+					layers: true_color_id,
+					format: "image/png",
+					transparent: 1,
+					attribution: '&copy; <a href="https://sentinel-hub.com/">Sentinel-Hub</a> &copy; <a href="https://www.copernicus.eu/en">Copernicus</a>'
+				});
+		
+				this.s2_latest_mosaic_false = L.tileLayer.wms(`${wmsProxy}?sid=${this.sid}`, {
+					layers: false_color_id,
+					WARNINGS: 'YES', // in-image warnings, like "No data available for the specified area"
+					format: "image/png",
+					transparent: 1,
+					attribution: '&copy; <a href="https://sentinel-hub.com/">Sentinel-Hub</a> &copy; <a href="https://www.copernicus.eu/en">Copernicus</a>'
+				});
+
+				this.initControlElements();
+				this.initBtnControls();
+			});
+		}
 
 		// default basemaps
 		addDefaultBasemaps(this.map);
@@ -356,11 +368,6 @@ export class UnescoMap {
 	}
 
 	async getGeoJsonData(year, month, bbox, callback) {
-		if (!this.sid) {
-			let req = await fetch(`${apiURL}/`);
-			this.sid = await req.text();
-		}
-		
 		if (!this.shToken) {
 			let res = await fetch(`${apiURL}/gettoken`)
 			let out = await res.json();
@@ -504,7 +511,7 @@ function addDefaultBasemaps(map) {
 function compareImagery(map, _type, time_before, time_after, cloud_coverage) {
 	try { window.slider.removeSlider(); } catch {}
 	
-	window.slider = new compareSlider(map, _type)
+	window.slider = new compareSlider(map, _type, this.sid);
 	window.slider.setParams(time_before, time_after, cloud_coverage);
 	window.slider.showSlider();
 }

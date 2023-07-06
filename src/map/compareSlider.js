@@ -1,9 +1,10 @@
 import {wmsProxy} from '../utils/data.js';
 
 export class compareSlider {
-	constructor(map, layer_type) {
+	constructor(map, layer_type, sid) {
 		this.map = map;
 		this.layer_type = layer_type;
+		this.sid = sid;
 	}
 	setParams(timeRangeBefore, timeRangeAfter, cloudCoverage) {
 		this.before = timeRangeBefore;
@@ -14,7 +15,7 @@ export class compareSlider {
 		// https://www.sentinel-hub.com/develop/api/ogc/standard-parameters/wms/
 		// https://www.sentinel-hub.com/develop/api/ogc/custom-parameters/
 		
-		this.layer_before = L.tileLayer.wms(wmsProxy, {
+		this.layer_before = L.tileLayer.wms(`${wmsProxy}?sid=${this.sid}`, {
 			layers: this.layer_type,
 			TIME: this.before,
 			WARNINGS: 'YES', // in-image warnings, like "No data available for the specified area"
@@ -22,7 +23,7 @@ export class compareSlider {
 			format: 'image/png',
 			attribution: '&copy; <a href="https://sentinel-hub.com/">Sentinel-Hub</a> &copy; <a href="https://www.copernicus.eu/en">Copernicus</a>'
 		});
-		this.layer_after = L.tileLayer.wms(wmsProxy, {
+		this.layer_after = L.tileLayer.wms(`${wmsProxy}?sid=${this.sid}`, {
 			layers: this.layer_type,
 			TIME: this.after,
 			WARNINGS: 'YES',
