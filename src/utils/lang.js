@@ -624,17 +624,38 @@ export const ui_lang = {
 
 /* modal about window content */
 const modal_about_lang = {
-	"ru": ``,
-	"en": ``,
-};
+	"ru": `
+		<p>В конце 1995 года первый российский природный объект был включён в список всемирного наследия ЮНЕСКО. В объект наследия «Девственные леса Коми» <a href="https://yugyd-va.ru/" target="_blank">вошли национальный парк «Югыд ва»</a> и <a href="https://www.pechora-reserve.ru/" target="_blank">Печоро-Илычский биосферный заповедник</a>. За более чем четверть века 12 природных территорий были признаны международным сообществом и получили статус мирового природного и культурного достояния.</p>
+		<p>К сожалению, почти половина этих уникальных объектов постоянно под угрозой. Остатки первозданной российской природы планируют уменьшать, вырубать, застраивать, использовать в хозяйстве. Несмотря на Конвенцию ЮНЕСКО, на землях объектов всемирного наследия уже сейчас прокладывают дороги и линии электропередач, строят спортивные и рекреационные объекты, планируют разведку и добычу полезных ископаемых.</p>
+		<p>Наиболее проблемными российскими объектами, которые регулярно обсуждаются Комитетом всемирного наследия ЮНЕСКО, являются «Девственные леса Коми», «Озеро Байкал», «Вулканы Камчатки», «Золотые горы Алтая» и «Западный Кавказ».</p>
+		<p>Эта карта была создана как доказательство нарушений Конвенции всемирного наследия и инструмент непрерывного мониторинга за состоянием объектов.</p>
+		<br>
+		<h4>Как пользоваться картой</h4>
+		<p>Вы хотите узнать, что происходит в объектах всемирного наследия? Нажмите на название интересующей вас территории на главном экране. Появится карта с указанием границ объекта всемирного наследия. Красными линиями и значком <img style="width: 30px;" src="./images/exc_marker_red.svg"> показаны границы потенциальных или реальных угроз. Описание каждой угрозы открывается по нажатию на нее.</p>
+		<p>Вы прочли об одной из угроз объекту всемирного наследия и хотите посмотреть, что ещё опасно для этой территории? Нажмите на стрелки <img style="width: 15px;" src="./images/chevron-left-solid.svg"> или <img style="width: 15px;" src="./images/chevron-right-solid.svg"> или на знак <img style="width: 30px;" src="./images/exc_marker_red.svg"> и переходите к описанию следующей угрозы.</p>
+		<p>Вы изучили все угрозы и хотите вернуться на главную страницу? Кнопка <img style="width: 30px;" src="./images/menu_black.svg"> в левом верхнем краю экрана вернёт вас к списку объектов под угрозой.</p>
+		<p>Вы хотите узнать больше и разобраться в проблеме? Кнопка <img style="width: 30px;" src="./images/layers.svg"> раскрывает дополнительные возможности. В выпадающем меню можно включать и выключать различную информацию: актуальные космоснимки, схему объекта, границы ценных природных территорий.</p>
+		<p>Если вы хотите сравнить, что происходило с объектом в разное время, используйте меню «Сравнение». Кнопка <img style="width: 15px;" src="./images/compare.svg"> позволит вам войти в данное меню. На экране появится подвижный слайдер. В меню «Сравнение» выберите интересующие даты снимков для левой и правой части экрана. Даты, для которых существуют малооблачные снимки, подсвечены в календаре зеленым цветом. Если функция «Точные даты снимков» выключена, то пробелы на карте, которые не покрываются снимками за указанные даты, будут замещены более ранними снимками (ближайшими к выбранной дате). Если функция «Точные даты снимков» включена, то на карте будут показаны только снимки, снятые в указанную дату. Отображение дат снимков можно включать или отключать по желанию. Космоснимки показываются в двух вариантах — в естественных цветах (True Color) и в сочетании, наиболее пригодном для выявления нового строительства (False color). Передвигая слайдер по экрану, вы увидите, что изменилось на особо ценной природной территории к новому пролёту спутника вокруг Земли. Меню «Сравнение» можно убрать, нажав на крестик <img style="width: 20px;" src="./images/close.svg">.</p>
+		<br>`,
 
+	"en":`
+		<p>At the end of 1995, the first Russian natural site was inscribed on the UNESCO World Heritage List. The World Heritage site “Virgin Komi Forests” comprised the <a href="https://yugyd-va.ru/" target="_blank">Yugyd Va National Park</a> and <a href="https://www.pechora-reserve.ru/" target="_blank">Pechoro-Ilychskiy State Nature Biosphere Reserve</a>. Over a quarter of a century, 12 natural areas have been recognized by the international community and have received the status of a World Natural and Cultural Heritage.</p>
+		<p>Unfortunately, half of these unique objects are constantly under threat. The remnants of pristine Russian nature are planned to reduce, cut down, build up, and use in economic development. Despite the UNESCO World Heritage Convention, roads and power lines are already being laid on the lands of World Heritage sites, sports and recreational facilities are being built, mineral exploration and mining are being planned.</p>
+		<p>The most problematic Russian sites, which are regularly discussed by the World Heritage Committee, are the “Virgin Komi Forests”, “Lake Baikal”, “Volcanoes of Kamchatka”, “Golden Mountains of Altai” and “Western Caucasus”.</p>
+		<p>This map was created as a proof of violations of the World Heritage Convention and a tool for continuous monitoring of the sites’ state of conservation.</p>
+		<br>
+		<h4>How to use the map</h4>
+		<p>Do you want to know what happens to World Heritage sites? On the main screen click on the name of the area you are interested in. A map will appear showing the boundaries of the World Heritage site. Red lines and an icon <img style="width: 30px;" src="./images/exc_marker_red.svg"> show the boundaries of potential or ascertained threats. The description of each threat opens by clicking on it.</p>
+		<p>Do you want to know what else is dangerous for this territory? Click on the arrows <img style="width: 15px;" src="./images/chevron-left-solid.svg"> or <img style="width: 15px;" src="./images/chevron-right-solid.svg"> or on the icon <img style="width: 30px;" src="./images/exc_marker_red.svg"> and go to the description of the next threat.</p>
+		<p>Have you read the information and want to return to the main page? The button <img style="width: 30px;" src="./images/menu_black.svg"> in the upper-left corner of the screen will return you to the list of sites under threat.</p>
+		<p>Do you want to learn more and understand the problem? The button <img style="width: 30px;" src="./images/layers.svg"> opens additional options. In the drop-down menu, you can enable or disable variety of information: current satellite images, object scheme, borders of valuable natural territories.</p>
+		<p>If you want to compare what happened to a site at different times, use the "Comparison" menu. To access this menu click on <img style="width: 15px;" src="./images/compare.svg">. A movable slider will appear on the screen. In the "Comparison" menu, select the dates of the imageries you are interested in for the left and right parts of the screen. Dates for which there are low-cloud imageries are marked in green in the calendar. If the function “Precise imagery dates” is disabled the gaps on the map that are not covered by imageries for the specified dates will be replaced by earlier imageries (closest to the selected date). If the function “Precise imagery dates” is enabled, only the satellite images taken on the specified date will be shown on the map. You can hide the dates if you want to. Satellite images are shown in two versions - in natural colors (True Color) and in a combination that is most suitable for identifying new construction (False color). Moving the slider on the screen, you will see what has changed in a particularly valuable natural area for the new satellite flight around the Earth. The “Comparison” menu can be removed by clicking on the Close <img style="width: 20px;" src="./images/close.svg">.</p>`,
+};
 function translateWebPage() {
 	let ui = ui_lang[lang];
 
 	// Modal info
 	$('#modal-content').html(modal_about_lang[lang]);
-
-	if (lang == 'ru') $('.btn-support-annoying').show();
 
 	// Intro
 	$('title').html(ui.website_header);
